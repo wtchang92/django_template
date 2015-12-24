@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'wtchang051592@gmail.com'
-EMAIL_HOST_PASSWORD = 'Wtc1992!'
+EMAIL_HOST_USER = 'edit this'
+EMAIL_HOST_PASSWORD = 'edit this'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
