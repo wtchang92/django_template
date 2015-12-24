@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!--{% if title %}-->
+<!--<div class = "row">-->
+    <!--<div class = "col-sm-6 col-sm-offset-3">-->
+        <!--<h1>{{title}}</h1>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--{% endif %}-->
+
+<div class = "row">
+    <div class = "col-sm-6 col-sm-offset-3">
+        <h1 class = "text-align-center">{{title}}</h1>
+        <form method = 'POST' action = ''> {% csrf_token %} <!-- action goes to the url -->
+            <!--{{form}}-->
+            {{ form|crispy }}
+            <input class = "btn btn-default" type = 'submit' value = 'Submit' />
+            <!--<input type = 'text'>-->
+            <!--<input>-->
+        </form>
+    </div>
+</div>
+{% endblock %}

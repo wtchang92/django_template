@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Welcome | home {{block.super}}{% endblock %}
+
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+{% if not request.user.is_authenticated %}
+
+
+<div class="jumbotron">
+    <div class = "container">
+        <div class = "row">
+            <div class = 'col-sm-6'>
+                <h1>django template</h1>
+                <p>This is a template to start on projects This is a template to start on projects This is a template to start on projects This is a template to start on projects This is a template to start on projects This is a template to start on projects This is a template to start on projects</p>
+
+                <p>
+                  <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
+                </p>
+            </div>
+            <div class = 'col-sm-6'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ikMZP1qaAHc" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<h1>You are logged in!</h1>
+
+    {% if queryset %}
+        <h2>Welcome Staff</h2>
+        <table class = "table">
+            <tr><td>email</td><td>timestamp</td></tr>
+            {% for object in queryset %}
+                <tr><td>{{forloop.counter}}</td><td>{{object.email}}</td><td>{{object.timestamp|timesince}} ago</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% else %}
+
+<div class="row">
+
+    <div class="col-sm-3 pull-right">
+
+        <p class = "lead text-align-center">{{title}}</p>
+
+
+
+        <form method = 'POST' action = ''> {% csrf_token %} <!-- action goes to the url -->
+            <!--{{form}}-->
+            <!--{{form.as_p}}-->
+            {{ form|crispy }}
+            <input class = 'btn btn-primary' type = 'submit' value = 'Sign up' />
+            <!--<input type = 'text'>-->
+            <!--<input>-->
+        </form>
+    </div>
+    <div class = "col-sm-3">
+        <p class = "lead text-align-center">Built with django 1.8.4 and BootStrap</p>
+
+    </div>
+
+
+    <div class = "col-sm-3">
+        <p class = "lead text-align-center"><i class="fa fa-reddit-alien fa-5x"></i></p>
+
+    </div>
+    <div class = "col-sm-3">
+        <p class = "lead text-align-center">Built with django 1.8.4 and BootStrap</p>
+
+    </div>
+
+</div>
+
+{% endif %}
+ {% endblock %}
+
+
+
