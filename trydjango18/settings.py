@@ -153,4 +153,3 @@ if not DEBUG:
     ALLOWED_HOSTS = ['*']
 
     # Static asset configuration
-    
