@@ -158,9 +158,9 @@ if not DEBUG:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'Cache-Control': 'max-age=94608000',
     }
-    AWS_STORAGE_BUCKET_NAME = 'djangotemplate'
-    AWS_ACCESS_KEY_ID = 'AKIAJPXBPGB6L5HMZ3CQ'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'edit this'
+    AWS_ACCESS_KEY_ID = 'edit this'
+    AWS_SECRET_ACCESS_KEY = 'edit this'
 
     # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
     # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
